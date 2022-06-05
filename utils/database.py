@@ -3,7 +3,7 @@ import mysql.connector as connection
 import pandas as pd
 
 
-db_connection=connection.connect(host="dbm2.itc.virginia.edu",
+db_connection=connection.connect(host="dbm2.its.virginia.edu",
                            user=os.environ['database_user'],
                            password=os.environ['database_password'],
                            database="civeleklab_SMC")
