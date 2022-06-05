@@ -3,6 +3,9 @@ import sys
 from utils import database,plotter
 import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
+
+conn = database.init_connection()
 
 SMC_phenotypes_options="""
 Difference_in_Tmax_No_log
@@ -33,7 +36,7 @@ FROM sample_SMC_phenotypes
 WHERE SMC_phenotype = '{first_phenotype}' OR SMC_phenotype = '{second_phenotype}'
 """
 
-df = database.execute_sql(sql)
+df = pd.read_sql(sql, conn)
 df = df.pivot(index='sample_id', columns='SMC_phenotype', values='value')
 
 
