@@ -1,6 +1,5 @@
 import streamlit as st
 import sys
-sys.path.append('../utils')
 from utils import database,plotter
 import seaborn as sns
 import matplotlib.pyplot as plt
